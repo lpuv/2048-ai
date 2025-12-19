@@ -144,8 +144,9 @@ class Keyboard2048Control(Generic2048Control):
             var tiles = tileContainer.children;
             for(var i=0; i<tiles.length; i++)
                 res.push(tiles[i].className);
-            res
+            JSON.stringify(res)
             ''')
+        res = json.loads(res)
         board = [[0]*4 for _ in range(4)]
         for tile in res:
             tval = pos = None
