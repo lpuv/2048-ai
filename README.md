@@ -34,7 +34,14 @@ Run `bin/2048` if you want to see the AI by itself in action.
 
 ## Running the browser-control version
 
-You can use this 2048 AI to control the 2048 browser game. The browser control capability is meant as a proof of concept to show the performance of the AI; it will only work on the [original 2048 browser game](http://gabrielecirulli.github.io/2048/) or any *compatible* clone, not all 2048 games.
+You can use this 2048 AI to control the 2048 browser game. The browser control capability is meant as a proof of concept to show the performance of the AI.
+
+A few different variants of the game are supported using the `-k` switch (e.g. `2048.py -k hybrid`):
+
+- `hybrid`: The default mode. Supports the [original 2048 browser game](https://web.archive.org/web/20250609134105/https://gabrielecirulli.github.io/2048/) or any *compatible* clone.
+- `fast`: A faster version of `hybrid`. Supports the original game, but tends to be less compatible with clones.
+- `keyboard`: A slower version of `hybrid`. Supports the original game and certain clones.
+- `play2048co`: A version designed specifically for the new version of play2048.co, which works as of 2025.
 
 ### Firefox
 
@@ -44,9 +51,9 @@ Open the game in a new tab, then run `2048.py -b firefox` and watch the game! Th
 
 ### Chrome
 
-Enable Chrome remote debugging by quitting it and then restarting it with the `remote-debugging-port` and `remote-allow-origins` command-line switches (e.g. `google-chrome --remote-debugging-port=9222 --remote-allow-origins=http://localhost:9222`).
+Enable Chrome remote debugging by quitting it and then restarting it with the `remote-debugging-port`, `remote-allow-origins` and `user-data-dir` command-line switches (e.g. `google-chrome --remote-debugging-port=9222 --remote-allow-origins=http://localhost:9222 --user-data-dir=chrome.tmp`).
 
-Open the game in a new tab, then run `2048.py -b chrome` and watch the game! The `-p` option can be used to set the port to connect to.
+Open the game in a new tab, then run `2048.py -b chrome` and watch the game! The `-p` option can be used to set the port to connect to (defaults to 9222).
 
 ## Using the AI interactively
 
